@@ -64,7 +64,7 @@ export default function CompatibilitySection() {
             }}
           >
             LEAKOLOCK® seal kits are engineered for all major excavator brands.
-            Simplify your procurement — one trusted supplier for your entire fleet.
+            Simplify your procurement. One trusted supplier for your entire fleet.
           </p>
         </div>
 
@@ -76,11 +76,9 @@ export default function CompatibilitySection() {
               <div
                 key={brand}
                 ref={ref}
-                className="group flex items-center justify-center p-4 cursor-default"
+                className="group flex items-center justify-center p-4 cursor-default transition-all duration-300"
                 style={{
-                  background: "#0A0A0A",
-                  border: "1px solid #1A1A1A",
-                  clipPath: "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
+                  background: "#0C0C0C",
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(20px)",
                   transition: `all 0.6s cubic-bezier(0.23, 1, 0.32, 1) ${(i % 5) * 60}ms`,
@@ -89,10 +87,10 @@ export default function CompatibilitySection() {
                 <span
                   className="text-sm text-center group-hover:text-white transition-colors duration-300"
                   style={{
-                    color: "#555555",
+                    color: "#777777",
                     fontFamily: "var(--font-bebas)",
                     letterSpacing: "0.1em",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                   }}
                 >
                   {brand}
@@ -103,30 +101,20 @@ export default function CompatibilitySection() {
         </div>
 
         {/* Bottom note */}
-        <div
-          className="text-center p-6 relative overflow-hidden"
-          style={{
-            background: "#080808",
-            border: "1px solid #1A1A1A",
-          }}
-        >
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px"
-            style={{ background: "linear-gradient(90deg, transparent, #DC2626, transparent)" }}
-          />
+        <div className="text-center py-6">
           <p
             className="text-sm"
-            style={{ color: "#555555", fontFamily: "var(--font-barlow)" }}
+            style={{ color: "#666666", fontFamily: "var(--font-barlow)" }}
           >
-            Don&apos;t see your brand?{" "}
+            Don&apos;t see your brand? Email us at{" "}
             <a
-              href="/contact"
+              href="mailto:info@leakolock.com"
               className="text-red-brand hover:text-white transition-colors duration-300"
               style={{ fontWeight: 500 }}
             >
-              Contact us
+              info@leakolock.com
             </a>{" "}
-            — we likely stock it or can source it within 48 hours.
+            - we likely stock it or can source it within 48 hours.
           </p>
         </div>
       </div>

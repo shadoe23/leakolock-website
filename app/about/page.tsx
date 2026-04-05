@@ -6,53 +6,53 @@ import { useInView } from "react-intersection-observer";
 
 const milestones = [
   {
-    year: "1993",
-    title: "Kaveri Hydraulics founded",
-    body: "Started as a small spare parts distributor in Bangalore, serving local excavator operators with genuine parts.",
-  },
-  {
-    year: "1998",
-    title: "Hydraulic specialisation",
-    body: "Shifted focus to hydraulic components — cylinders, pumps, and sealing solutions. Became the go-to hydraulic specialist in the region.",
-  },
-  {
-    year: "2005",
-    title: "Expanded brand coverage",
-    body: "Grew to support 10+ excavator brands including Komatsu, Hitachi, JCB, CAT, and Volvo. Pan-Karnataka distribution established.",
+    year: "2008",
+    title: "Hydraulic seal expertise built",
+    body: "Spent years building technical expertise in excavator hydraulic sealing systems. Developed deep knowledge of what makes seal kits fail under demanding conditions.",
   },
   {
     year: "2012",
-    title: "Manufacturing partnerships",
-    body: "Established direct relationships with premium seal manufacturers. Started customising kits for local market conditions.",
+    title: "Seal kit specialisation",
+    body: "Shifted focus exclusively to hydraulic seal kit development. Started engineering compound-specific kits matched to each machine's operating demands.",
+  },
+  {
+    year: "2016",
+    title: "Expanded brand coverage",
+    body: "Grew to support 10+ excavator brands including Komatsu, Hitachi, JCB, CAT, and Volvo.",
   },
   {
     year: "2020",
     title: "LEAKOLOCK® brand launched",
-    body: "After years of understanding exactly what construction teams need, we created our own premium seal kit brand — built for India's toughest job sites.",
+    body: "After years of understanding exactly what construction teams need, LEAKOLOCK® was created - a premium seal kit brand engineered for zero-leak performance in the field.",
+  },
+  {
+    year: "2022",
+    title: "Direct manufacturing partnerships",
+    body: "Established direct relationships with premium seal manufacturers. Tighter quality control from material sourcing through to final kit assembly.",
   },
   {
     year: "2024",
-    title: "15+ brands, all India presence",
-    body: "LEAKOLOCK® now supports 15+ excavator brands with same-day dispatch and 48-hour delivery to construction sites across India.",
+    title: "15+ brands supported",
+    body: "LEAKOLOCK® now supports 15+ excavator brands with same-day dispatch and fast delivery to construction sites worldwide.",
   },
 ];
 
 const values = [
   {
     title: "Precision over compromise",
-    body: "We never cut corners on material specifications. Every seal is the right compound for its application — not just the cheapest option that fits.",
+    body: "We never cut corners on material specifications. Every seal is the right compound for its application, not just the cheapest option that fits.",
   },
   {
-    title: "30 years of field knowledge",
-    body: "We have seen what seal failures look like in Indian conditions. That experience is baked into every kit specification we produce.",
+    title: "Decades of field knowledge",
+    body: "We have seen what seal failures look like under extreme conditions. That experience is baked into every kit specification we produce.",
   },
   {
     title: "Speed as a feature",
-    body: "'Sealing fast forward' isn't just a tagline. Same-day dispatch, 48-hour delivery, and zero-fuss ordering are core to what we offer.",
+    body: "'Sealing fast forward' isn't just a tagline. Same-day dispatch, fast delivery, and zero-fuss ordering are core to what we offer.",
   },
   {
-    title: "The Kaveri guarantee",
-    body: "Behind every LEAKOLOCK® kit is the reputation of Kaveri Hydraulics — three decades of trusted relationships with India's construction industry.",
+    title: "The LEAKOLOCK® guarantee",
+    body: "Behind every LEAKOLOCK® kit is a commitment to zero-leak performance. Built to the same tolerances as OEM components or better.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function AboutPage() {
               letterSpacing: "0.1em",
             }}
           >
-            KAVERI
+            LEAKOLOCK
           </span>
         </div>
 
@@ -119,11 +119,11 @@ export default function AboutPage() {
               transition: "all 1s cubic-bezier(0.23, 1, 0.32, 1) 0.1s",
             }}
           >
-            Three decades
+            Built on deep
             <br />
-            of <span style={{ color: "#DC2626" }}>hydraulic</span>
+            <span style={{ color: "#DC2626" }}>hydraulic</span>
             <br />
-            mastery
+            expertise
           </h1>
           <p
             className="text-base md:text-lg max-w-2xl leading-relaxed"
@@ -134,8 +134,8 @@ export default function AboutPage() {
               transition: "all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.3s",
             }}
           >
-            LEAKOLOCK® is the premium seal kit brand of Kaveri Hydraulics,
-            a Bangalore-based excavator spare parts company trusted since 1993.
+            LEAKOLOCK® is a precision-engineered hydraulic seal kit brand built for construction
+            professionals who can&apos;t afford downtime.
             We don&apos;t just sell seal kits. We eliminate downtime.
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
       {/* Divider */}
       <div className="bolt-divider" />
 
-      {/* Kaveri Hydraulics section */}
+      {/* Expertise section */}
       <section className="section-pad" style={{ background: "#000000" }}>
         <div className="container-brand">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -165,7 +165,7 @@ export default function AboutPage() {
                         className="text-xs tracking-[0.25em] text-red-brand"
                         style={{ fontFamily: "var(--font-bebas)" }}
                       >
-                        KAVERI HYDRAULICS
+                        OUR EXPERTISE
                       </span>
                     </div>
                     <h2
@@ -180,9 +180,9 @@ export default function AboutPage() {
                         transition: "all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.1s",
                       }}
                     >
-                      Bangalore&apos;s trusted
+                      Precision-engineered
                       <br />
-                      <span style={{ color: "#DC2626" }}>hydraulics specialist</span>
+                      <span style={{ color: "#DC2626" }}>for zero-leak performance</span>
                     </h2>
                     <div
                       className="space-y-4"
@@ -193,17 +193,16 @@ export default function AboutPage() {
                       }}
                     >
                       <p className="text-base leading-relaxed" style={{ color: "#888888", fontFamily: "var(--font-barlow)" }}>
-                        Founded in 1993, Kaveri Hydraulics has spent three decades supplying excavator operators,
-                        construction companies, and equipment dealers across Karnataka and India with reliable hydraulic components.
+                        LEAKOLOCK® was built on deep technical knowledge of how hydraulic seal systems fail. We studied every failure mode
+                        - contamination, pressure cycling, thermal extremes - and engineered kits that address all of them.
                       </p>
                       <p className="text-base leading-relaxed" style={{ color: "#888888", fontFamily: "var(--font-barlow)" }}>
-                        Over the years, we built deep expertise in what seal failures actually look like in the field —
-                        the heat, the dust, the monsoon mud, the extreme pressures of Indian construction sites.
+                        We built expertise in what seal failures look like in the field: heat, dust, extreme pressure, and heavy cycles.
                         That knowledge is what LEAKOLOCK® is built on.
                       </p>
                       <p className="text-base leading-relaxed" style={{ color: "#888888", fontFamily: "var(--font-barlow)" }}>
-                        Every kit we produce carries the weight of 30+ years of relationships, feedback, and field experience.
-                        When a LEAKOLOCK® kit goes into a machine, it stays there — leak-free.
+                        Every kit carries the weight of years of field feedback and rigorous testing.
+                        When a LEAKOLOCK® kit goes into a machine, it stays there, leak-free.
                       </p>
                     </div>
                   </div>
@@ -220,8 +219,7 @@ export default function AboutPage() {
                     ref={ref}
                     className="relative p-8 md:p-10"
                     style={{
-                      background: "#080808",
-                      border: "1px solid #1A1A1A",
+                      background: "#0A0A0A",
                       opacity: inView ? 1 : 0,
                       transform: inView ? "translateX(0)" : "translateX(30px)",
                       transition: "all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.2s",
@@ -237,13 +235,12 @@ export default function AboutPage() {
                         alt="LEAKOLOCK®"
                         fill
                         className="object-contain object-left"
+                        style={{ mixBlendMode: "screen" }}
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-6">
                       {[
-                        { v: "1993", l: "Founded" },
-                        { v: "30+", l: "Years active" },
-                        { v: "50K+", l: "Kits sold" },
+                        { v: "50K+", l: "Kits delivered" },
                         { v: "15+", l: "Brands" },
                         { v: "48hr", l: "Delivery" },
                         { v: "100%", l: "Tested" },
@@ -261,7 +258,7 @@ export default function AboutPage() {
                           </div>
                           <div
                             className="text-xs tracking-widest"
-                            style={{ color: "#555555", fontFamily: "var(--font-bebas)", letterSpacing: "0.15em" }}
+                            style={{ color: "#777777", fontFamily: "var(--font-bebas)", letterSpacing: "0.15em" }}
                           >
                             {s.l}
                           </div>
@@ -270,19 +267,19 @@ export default function AboutPage() {
                     </div>
                     <div
                       className="mt-8 pt-6"
-                      style={{ borderTop: "1px solid #1A1A1A" }}
+                      style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
                     >
                       <p
-                        className="text-xs italic"
-                        style={{ color: "#444444", fontFamily: "var(--font-barlow)" }}
+                        className="text-sm italic"
+                        style={{ color: "#888888", fontFamily: "var(--font-barlow)", lineHeight: 1.7 }}
                       >
-                        &ldquo;We created LEAKOLOCK® because we knew exactly what the market was missing — not cheap seals, but engineered seals that actually last.&rdquo;
+                        &ldquo;We created LEAKOLOCK® because we knew exactly what the market was missing: not cheap seals, but engineered seals that actually last.&rdquo;
                       </p>
                       <p
                         className="text-xs mt-2"
                         style={{ color: "#DC2626", fontFamily: "var(--font-bebas)", letterSpacing: "0.1em" }}
                       >
-                        — Kaveri Hydraulics, Bangalore
+                        - LEAKOLOCK® Engineering Team
                       </p>
                     </div>
                   </div>
@@ -294,114 +291,71 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="section-pad" style={{ background: "#030303", borderTop: "1px solid #0A0A0A" }}>
+      <section style={{ background: "#030303", borderTop: "1px solid #0A0A0A", padding: "7rem 0" }}>
         <div className="container-brand">
-          {(() => {
-            const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 }); // eslint-disable-line react-hooks/rules-of-hooks
-            return (
-              <div ref={ref}>
-                <div className="flex items-center gap-3 mb-4"
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transition: "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)",
-                  }}
-                >
-                  <div className="red-line" />
-                  <span className="text-xs tracking-[0.25em] text-red-brand" style={{ fontFamily: "var(--font-bebas)" }}>
-                    COMPANY TIMELINE
-                  </span>
-                </div>
-                <h2
-                  className="font-display text-white mb-16"
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "clamp(2.5rem, 6vw, 5rem)",
-                    lineHeight: 0.95,
-                    letterSpacing: "0.02em",
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "translateY(0)" : "translateY(30px)",
-                    transition: "all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.1s",
-                  }}
-                >
-                  Three decades,
-                  <br />
-                  <span style={{ color: "#DC2626" }}>one mission</span>
-                </h2>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
+            <div className="red-line" />
+            <span style={{ fontFamily: "var(--font-bebas)", fontSize: "0.75rem", letterSpacing: "0.25em", color: "#DC2626" }}>
+              COMPANY TIMELINE
+            </span>
+          </div>
+          <h2 style={{
+            fontFamily: "var(--font-bebas)",
+            fontSize: "clamp(2.5rem, 6vw, 5rem)",
+            lineHeight: 0.95,
+            letterSpacing: "0.02em",
+            color: "#FFFFFF",
+            marginBottom: "4rem",
+          }}>
+            The LEAKOLOCK®<br />
+            <span style={{ color: "#DC2626" }}>journey</span>
+          </h2>
 
-                <div className="relative">
-                  {/* Vertical line */}
-                  <div
-                    className="absolute left-6 top-4 bottom-0 w-px hidden md:block"
-                    style={{ background: "linear-gradient(to bottom, #DC2626, rgba(220,38,38,0.1))" }}
-                  />
-
-                  <div className="space-y-0">
-                    {milestones.map((m, i) => {
-                      const [mRef, mInView] = useInView({ triggerOnce: true, threshold: 0.2 }); // eslint-disable-line react-hooks/rules-of-hooks
-                      return (
-                        <div
-                          key={m.year}
-                          ref={mRef}
-                          className="relative md:pl-20 pb-12 last:pb-0"
-                          style={{
-                            opacity: mInView ? 1 : 0,
-                            transform: mInView ? "translateX(0)" : "translateX(-20px)",
-                            transition: `all 0.7s cubic-bezier(0.23, 1, 0.32, 1) ${i * 100}ms`,
-                          }}
-                        >
-                          {/* Dot */}
-                          <div
-                            className="absolute left-[18px] w-7 h-7 rounded-full border-2 items-center justify-center hidden md:flex"
-                            style={{
-                              borderColor: "#DC2626",
-                              background: "#000000",
-                              top: "2px",
-                            }}
-                          >
-                            <div className="w-2 h-2 rounded-full bg-red-brand" />
-                          </div>
-
-                          <div className="flex items-start gap-5">
-                            <div
-                              className="flex-shrink-0 px-3 py-1 md:hidden"
-                              style={{
-                                background: "#DC2626",
-                                fontFamily: "var(--font-bebas)",
-                                fontSize: "0.85rem",
-                                letterSpacing: "0.1em",
-                              }}
-                            >
-                              {m.year}
-                            </div>
-                            <div>
-                              <div
-                                className="text-sm mb-1 hidden md:block"
-                                style={{ color: "#DC2626", fontFamily: "var(--font-bebas)", letterSpacing: "0.15em" }}
-                              >
-                                {m.year}
-                              </div>
-                              <h3
-                                className="text-white mb-2"
-                                style={{ fontFamily: "var(--font-barlow)", fontWeight: 500, fontSize: "1rem" }}
-                              >
-                                {m.title}
-                              </h3>
-                              <p
-                                className="text-sm leading-relaxed"
-                                style={{ color: "#666666", fontFamily: "var(--font-barlow)", maxWidth: "520px" }}
-                              >
-                                {m.body}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+          <div style={{ display: "block" }}>
+            {milestones.map((m) => (
+              <div key={m.year} style={{ marginBottom: "3rem" }}>
+                <p style={{
+                  color: "#DC2626",
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "1.5rem",
+                  letterSpacing: "0.1em",
+                  lineHeight: 1,
+                  whiteSpace: "nowrap",
+                  overflow: "visible",
+                  display: "block",
+                  width: "auto",
+                  marginBottom: "0.5rem",
+                }}>
+                  {m.year}
+                </p>
+                <div style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  backgroundColor: "#DC2626",
+                  marginBottom: "0.5rem",
+                }} />
+                <h3 style={{
+                  color: "#FFFFFF",
+                  fontFamily: "var(--font-barlow)",
+                  fontWeight: 500,
+                  fontSize: "1rem",
+                  marginBottom: "0.4rem",
+                }}>
+                  {m.title}
+                </h3>
+                <p style={{
+                  color: "#666666",
+                  fontFamily: "var(--font-barlow)",
+                  fontSize: "0.9rem",
+                  lineHeight: 1.7,
+                  maxWidth: "520px",
+                }}>
+                  {m.body}
+                </p>
               </div>
-            );
-          })()}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -453,7 +407,7 @@ export default function AboutPage() {
                       <div
                         key={v.title}
                         ref={vRef}
-                        className="p-7 card-dark relative"
+                        className="p-7 relative"
                         style={{
                           opacity: vInView ? 1 : 0,
                           transform: vInView ? "translateY(0)" : "translateY(30px)",
@@ -507,10 +461,10 @@ export default function AboutPage() {
             Ready to work with us?
           </h2>
           <p className="text-base mb-8" style={{ color: "#666666", fontFamily: "var(--font-barlow)" }}>
-            Get a quote or drop us a message — we respond within hours.
+            Get a quote or drop us a message. We respond within hours.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link href="/contact" className="btn-primary">Get in touch</Link>
+            <a href="mailto:info@leakolock.com" className="btn-primary">Get in touch</a>
             <Link href="/products" className="btn-outline">View products</Link>
           </div>
         </div>

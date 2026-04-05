@@ -174,25 +174,6 @@ export default function HeroSection() {
           transition: "opacity 0.1s",
         }}
       >
-        {/* Badge */}
-        <div
-          className="flex items-center gap-2 mb-8 px-4 py-2 border border-red-brand/30 clip-corner-tr"
-          style={{
-            background: "rgba(220,38,38,0.06)",
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.2s",
-          }}
-        >
-          <div className="w-1.5 h-1.5 rounded-full bg-red-brand animate-pulse" />
-          <span
-            className="text-xs tracking-[0.25em] text-red-brand"
-            style={{ fontFamily: "var(--font-bebas)" }}
-          >
-            PERFORMANTE PARTS
-          </span>
-        </div>
-
         {/* Logo */}
         <div
           className="relative mb-8"
@@ -216,6 +197,7 @@ export default function HeroSection() {
               fill
               className="object-contain"
               priority
+              style={{ mixBlendMode: "screen" }}
             />
           </div>
         </div>
@@ -239,18 +221,19 @@ export default function HeroSection() {
 
         {/* Sub */}
         <p
-          className="text-base md:text-lg max-w-xl leading-relaxed mb-10"
+          className="text-base md:text-lg max-w-xl mb-12"
           style={{
-            color: "#A0A0A0",
+            color: "#AAAAAA",
             fontFamily: "var(--font-barlow)",
             fontWeight: 400,
+            lineHeight: 1.75,
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(20px)",
             transition: "all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.85s",
           }}
         >
-          Premium hydraulic seal kits for excavators — engineered with 30 years
-          of hydraulic expertise from Kaveri Hydraulics, Bangalore.
+          Premium hydraulic seal kits for excavators, engineered with
+          decades of deep hydraulic expertise.
         </p>
 
         {/* CTAs */}
@@ -268,9 +251,9 @@ export default function HeroSection() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
-          <Link href="/contact" className="btn-outline">
+          <a href="mailto:info@leakolock.com" className="btn-outline">
             Get a Quote
-          </Link>
+          </a>
         </div>
 
         {/* Stats row */}

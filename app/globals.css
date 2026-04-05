@@ -34,13 +34,14 @@
 
 html {
   background: #000000;
-  scroll-behavior: auto; /* Lenis handles this */
+  scroll-behavior: auto;
 }
 
 body {
   background: #000000;
   color: #FFFFFF;
   font-family: var(--font-barlow), 'Barlow', sans-serif;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -67,17 +68,6 @@ body {
   color: #FFFFFF;
 }
 
-/* ─── Noise Texture Overlay ─── */
-.noise-overlay::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.04;
-}
-
 /* ─── Typography Utilities ─── */
 .font-display {
   font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
@@ -91,27 +81,13 @@ body {
   background-clip: text;
 }
 
-.text-gradient-white {
-  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* ─── Glow Effects ─── */
-.glow-red {
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.2);
-}
-
 .glow-red-text {
   text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.4);
 }
 
-.glow-red-border {
-  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.3), 0 0 20px rgba(220, 38, 38, 0.1);
-}
-
 /* ─── Buttons ─── */
+/* clip-path ONLY on primary CTA buttons */
 .btn-primary {
   position: relative;
   display: inline-flex;
@@ -135,14 +111,14 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .btn-primary:hover {
   background: #FF3333;
-  box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.25);
   transform: translateY(-2px);
 }
 
@@ -162,7 +138,7 @@ body {
   font-family: var(--font-bebas), sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.1em;
-  border: 1px solid rgba(220, 38, 38, 0.5);
+  border: 1px solid rgba(220, 38, 38, 0.4);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
@@ -170,21 +146,19 @@ body {
 
 .btn-outline:hover {
   border-color: #DC2626;
-  background: rgba(220, 38, 38, 0.1);
+  background: rgba(220, 38, 38, 0.08);
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
   transform: translateY(-2px);
 }
 
-/* ─── Card Styles ─── */
+/* ─── Card Styles — no border, no radius, glow on hover only ─── */
 .card-dark {
-  background: #111111;
-  border: 1px solid #1A1A1A;
+  background: #0E0E0E;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card-dark:hover {
-  border-color: rgba(220, 38, 38, 0.4);
-  box-shadow: 0 8px 40px rgba(220, 38, 38, 0.1), 0 0 0 1px rgba(220, 38, 38, 0.15);
+  box-shadow: 0 8px 50px rgba(220, 38, 38, 0.1), 0 24px 60px rgba(0, 0, 0, 0.5);
   transform: translateY(-4px);
 }
 
@@ -194,6 +168,7 @@ body {
   height: 2px;
   background: #DC2626;
   position: relative;
+  flex-shrink: 0;
 }
 
 .red-line::after {
@@ -209,18 +184,18 @@ body {
 
 /* ─── Section Padding ─── */
 .section-pad {
-  padding: 6rem 0;
+  padding: 7rem 0;
 }
 
 @media (min-width: 768px) {
   .section-pad {
-    padding: 8rem 0;
+    padding: 9rem 0;
   }
 }
 
 @media (min-width: 1280px) {
   .section-pad {
-    padding: 10rem 0;
+    padding: 11rem 0;
   }
 }
 
@@ -234,17 +209,17 @@ body {
 
 @media (min-width: 768px) {
   .container-brand {
-    padding: 0 2.5rem;
+    padding: 0 3rem;
   }
 }
 
-/* ─── Animated underline ─── */
+/* ─── Animated underline nav ─── */
 .nav-link {
   position: relative;
   font-family: var(--font-bebas), sans-serif;
   font-size: 1rem;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease;
 }
 
@@ -272,7 +247,15 @@ body {
   color: #FFFFFF;
 }
 
-/* ─── Scroll reveal animations (for JS-triggered classes) ─── */
+/* ─── Lightning bolt divider ─── */
+.bolt-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #DC2626 30%, #DC2626 70%, transparent 100%);
+  opacity: 0.2;
+}
+
+/* ─── Scroll reveal ─── */
 .reveal-up {
   opacity: 0;
   transform: translateY(40px);
@@ -282,49 +265,6 @@ body {
 .reveal-up.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ─── Lightning bolt divider ─── */
-.bolt-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #DC2626 30%, #DC2626 70%, transparent 100%);
-  opacity: 0.3;
-}
-
-/* ─── Grain texture ─── */
-.grain {
-  position: relative;
-}
-
-.grain::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-/* ─── Clip corners ─── */
-.clip-corner-tr {
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
-}
-
-.clip-corner-all {
-  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
-}
-
-/* ─── Loading Screen ─── */
-#loading-screen {
-  position: fixed;
-  inset: 0;
-  background: #000000;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 /* ─── Red ambient glow bg ─── */

@@ -12,7 +12,7 @@ function ProductCard({ product, index }: { product: SealKitProduct; index: numbe
   return (
     <div
       ref={ref}
-      className="group card-dark overflow-hidden relative"
+      className="group card-dark relative"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(30px)",
@@ -37,25 +37,11 @@ function ProductCard({ product, index }: { product: SealKitProduct; index: numbe
           style={{ background: "radial-gradient(circle at center, rgba(220,38,38,0.1), transparent 70%)" }}
         />
 
-        {product.badge && (
-          <div
-            className="absolute top-3 left-3 px-3 py-1 text-xs"
-            style={{
-              background: "#DC2626",
-              fontFamily: "var(--font-bebas)",
-              letterSpacing: "0.1em",
-              clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
-            }}
-          >
-            {product.badge}
-          </div>
-        )}
         <div
-          className="absolute bottom-3 left-3 px-2 py-1 text-xs"
+          className="absolute bottom-3 left-3 px-2.5 py-1 text-xs"
           style={{
-            background: "rgba(0,0,0,0.7)",
+            background: "rgba(0,0,0,0.65)",
             backdropFilter: "blur(8px)",
-            border: "1px solid rgba(220,38,38,0.3)",
             color: "#DC2626",
             fontFamily: "var(--font-bebas)",
             letterSpacing: "0.1em",
@@ -73,34 +59,21 @@ function ProductCard({ product, index }: { product: SealKitProduct; index: numbe
           {product.name}
         </h3>
         <p
-          className="text-sm mb-5 leading-relaxed"
-          style={{ color: "#666666", fontFamily: "var(--font-barlow)", lineClamp: 2 }}
+          className="text-sm mb-5"
+          style={{ color: "#A0A0A0", fontFamily: "var(--font-barlow)", lineHeight: 1.7 }}
         >
           {product.description}
         </p>
 
-        {/* Specs */}
-        <div className="space-y-1.5 mb-5">
-          {product.specs.map((spec) => (
-            <div key={spec} className="flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#DC2626" }} />
-              <span className="text-xs" style={{ color: "#555555", fontFamily: "var(--font-barlow)" }}>
-                {spec}
-              </span>
-            </div>
-          ))}
-        </div>
-
         {/* Compatible brands */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
+        <div className="flex flex-wrap gap-1.5">
           {product.brands.slice(0, 4).map((brand) => (
             <span
               key={brand}
-              className="text-xs px-2 py-0.5"
+              className="text-xs px-2.5 py-1"
               style={{
-                background: "#111111",
-                border: "1px solid #1A1A1A",
-                color: "#666666",
+                background: "#181818",
+                color: "#888888",
                 fontFamily: "var(--font-barlow)",
               }}
             >
@@ -109,33 +82,12 @@ function ProductCard({ product, index }: { product: SealKitProduct; index: numbe
           ))}
           {product.brands.length > 4 && (
             <span
-              className="text-xs px-2 py-0.5"
-              style={{ background: "#111111", color: "#444444", fontFamily: "var(--font-barlow)" }}
+              className="text-xs px-2.5 py-1"
+              style={{ background: "#181818", color: "#666666", fontFamily: "var(--font-barlow)" }}
             >
               +{product.brands.length - 4} more
             </span>
           )}
-        </div>
-
-        <div style={{ borderTop: "1px solid #1A1A1A", paddingTop: "1rem" }}>
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 text-sm group-hover:text-red-brand transition-colors duration-300"
-            style={{ color: "#555555", fontFamily: "var(--font-bebas)", letterSpacing: "0.1em" }}
-          >
-            Enquire now
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
       </div>
 
@@ -166,7 +118,7 @@ export default function ProductsPage() {
       <div
         ref={heroRef}
         className="relative py-20 md:py-28 overflow-hidden"
-        style={{ background: "#000000", borderBottom: "1px solid #111111" }}
+        style={{ background: "#000000" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
@@ -225,9 +177,8 @@ export default function ProductsPage() {
         className="sticky z-40 py-4"
         style={{
           top: "4rem",
-          background: "rgba(0,0,0,0.95)",
-          borderBottom: "1px solid #111111",
-          backdropFilter: "blur(16px)",
+          background: "rgba(0,0,0,0.92)",
+          backdropFilter: "blur(20px)",
         }}
       >
         <div className="container-brand">
@@ -248,9 +199,8 @@ export default function ProductsPage() {
                   style={{
                     fontFamily: "var(--font-bebas)",
                     letterSpacing: "0.1em",
-                    background: activeCategory === cat ? "#DC2626" : "transparent",
-                    color: activeCategory === cat ? "#FFFFFF" : "#555555",
-                    border: `1px solid ${activeCategory === cat ? "#DC2626" : "#1A1A1A"}`,
+                    background: activeCategory === cat ? "#DC2626" : "rgba(255,255,255,0.04)",
+                    color: activeCategory === cat ? "#FFFFFF" : "#888888",
                   }}
                 >
                   {cat}
@@ -274,9 +224,8 @@ export default function ProductsPage() {
                   style={{
                     fontFamily: "var(--font-bebas)",
                     letterSpacing: "0.1em",
-                    background: activeBrand === brand ? "rgba(220,38,38,0.15)" : "transparent",
-                    color: activeBrand === brand ? "#DC2626" : "#555555",
-                    border: `1px solid ${activeBrand === brand ? "rgba(220,38,38,0.4)" : "#1A1A1A"}`,
+                    background: activeBrand === brand ? "rgba(220,38,38,0.18)" : "rgba(255,255,255,0.04)",
+                    color: activeBrand === brand ? "#DC2626" : "#888888",
                   }}
                 >
                   {brand}
@@ -301,13 +250,13 @@ export default function ProductsPage() {
             <span style={{ color: "#DC2626" }}>{filtered.length}</span>{" "}
             product{filtered.length !== 1 ? "s" : ""}
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="mailto:info@leakolock.com"
             className="text-xs hover:text-white transition-colors duration-300"
-            style={{ color: "#555555", fontFamily: "var(--font-bebas)", letterSpacing: "0.1em" }}
+            style={{ color: "#666666", fontFamily: "var(--font-bebas)", letterSpacing: "0.1em" }}
           >
-            Need a custom kit? →
-          </Link>
+            Need a custom kit? Email us →
+          </a>
         </div>
 
         {filtered.length > 0 ? (
@@ -328,18 +277,18 @@ export default function ProductsPage() {
               className="text-sm mb-6"
               style={{ color: "#444444", fontFamily: "var(--font-barlow)" }}
             >
-              We likely stock this — just not shown here.
+              We likely stock this, just not shown here.
             </p>
-            <Link href="/contact" className="btn-primary">
-              Contact us for availability
-            </Link>
+            <a href="mailto:info@leakolock.com" className="btn-primary">
+              Email us for availability
+            </a>
           </div>
         )}
 
         {/* CTA Banner */}
         <div
           className="mt-16 p-8 md:p-12 relative overflow-hidden"
-          style={{ background: "#080808", border: "1px solid #1A1A1A" }}
+          style={{ background: "#0A0A0A" }}
         >
           <div
             className="absolute top-0 left-0 right-0 h-px"
@@ -366,16 +315,14 @@ export default function ProductsPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <Link href="/contact" className="btn-primary">
+              <a href="mailto:info@leakolock.com" className="btn-primary">
                 Request Custom Kit
-              </Link>
+              </a>
               <a
-                href="https://wa.me/919980000000"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:info@leakolock.com"
                 className="btn-outline flex items-center gap-2"
               >
-                WhatsApp
+                Email us
               </a>
             </div>
           </div>

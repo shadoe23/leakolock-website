@@ -11,7 +11,7 @@ const features = [
     ),
     title: "OEM-compatible precision",
     description:
-      "Every seal kit is dimensioned to OEM specifications. Direct-fit replacement with no modifications needed — saving you time and labour costs.",
+      "Every seal kit is dimensioned to OEM specifications. Direct-fit replacement with no modifications needed, saving you time and labour costs.",
   },
   {
     icon: (
@@ -30,9 +30,9 @@ const features = [
         <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Built for Indian conditions",
+    title: "Built for demanding conditions",
     description:
-      "Heat, dust, monsoon mud — Indian construction sites are brutal. Our seal compounds are formulated for temperatures from -30°C to 120°C and extreme contamination exposure.",
+      "Heat, dust, extreme pressure cycles. Construction sites are brutal. Our seal compounds are formulated for temperatures from -30°C to 120°C and extreme contamination exposure.",
   },
   {
     icon: (
@@ -56,7 +56,7 @@ const features = [
     ),
     title: "Genuine material grades",
     description:
-      "Polyurethane, FKM (Viton), NBR, and PTFE — we specify the right compound for each application, not just the cheapest rubber available.",
+      "Polyurethane, FKM (Viton), NBR, and PTFE. We specify the right compound for each application, not just the cheapest rubber available.",
   },
   {
     icon: (
@@ -65,9 +65,9 @@ const features = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "Fast delivery, Bangalore & beyond",
+    title: "Fast nationwide delivery",
     description:
-      "Same-day dispatch for orders placed before 3pm. Pan-India delivery within 48–72 hours. We know downtime costs money — we move fast.",
+      "Same-day dispatch for orders placed before 3pm. Nationwide delivery within 48-72 hours. We know downtime costs money. We move fast.",
   },
 ];
 
@@ -127,7 +127,7 @@ export default function WhyLeakolock() {
             }}
           >
             Every LEAKOLOCK® kit is backed by decades of hands-on experience,
-            rigorous testing, and a simple promise — zero leaks, zero downtime.
+            rigorous testing, and a simple promise: zero leaks, zero downtime.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export default function WhyLeakolock() {
               <div
                 key={feature.title}
                 ref={ref}
-                className="group p-7 card-dark relative overflow-hidden"
+                className="group p-8 relative"
                 style={{
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(30px)",
@@ -154,12 +154,10 @@ export default function WhyLeakolock() {
 
                 {/* Icon */}
                 <div
-                  className="flex items-center justify-center w-14 h-14 mb-5 relative"
+                  className="flex items-center justify-center w-14 h-14 mb-6"
                   style={{
-                    background: "#0A0A0A",
-                    border: "1px solid #1A1A1A",
+                    background: "rgba(220,38,38,0.08)",
                     color: "#DC2626",
-                    clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
                     transition: "all 0.3s ease",
                   }}
                 >
@@ -178,8 +176,8 @@ export default function WhyLeakolock() {
                   {feature.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "#666666", fontFamily: "var(--font-barlow)" }}
+                  className="text-sm"
+                  style={{ color: "#999999", fontFamily: "var(--font-barlow)", lineHeight: 1.75 }}
                 >
                   {feature.description}
                 </p>

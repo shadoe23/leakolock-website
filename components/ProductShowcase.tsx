@@ -20,7 +20,7 @@ function ProductCard({
   return (
     <div
       ref={ref}
-      className="group relative card-dark overflow-hidden cursor-pointer"
+      className="group relative card-dark cursor-pointer"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(40px)",
@@ -49,28 +49,12 @@ function ProductCard({
           style={{ background: "radial-gradient(circle at center, rgba(220,38,38,0.12) 0%, transparent 70%)" }}
         />
 
-        {/* Badge */}
-        {product.badge && (
-          <div
-            className="absolute top-3 left-3 px-3 py-1 text-xs tracking-widest"
-            style={{
-              background: "#DC2626",
-              fontFamily: "var(--font-bebas)",
-              letterSpacing: "0.1em",
-              clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
-            }}
-          >
-            {product.badge}
-          </div>
-        )}
-
         {/* Category tag */}
         <div
-          className="absolute top-3 right-3 px-2 py-1 text-xs"
+          className="absolute top-3 right-3 px-2.5 py-1 text-xs"
           style={{
-            background: "rgba(0,0,0,0.7)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            color: "#A0A0A0",
+            background: "rgba(0,0,0,0.65)",
+            color: "#BBBBBB",
             fontFamily: "var(--font-bebas)",
             letterSpacing: "0.12em",
             backdropFilter: "blur(8px)",
@@ -81,31 +65,30 @@ function ProductCard({
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-6 pt-5">
         <h3
-          className="text-white mb-2 font-medium group-hover:text-red-brand transition-colors duration-300"
-          style={{ fontFamily: "var(--font-barlow)", fontWeight: 500, fontSize: "0.95rem", lineHeight: 1.4 }}
+          className="text-white mb-3 font-medium group-hover:text-red-brand transition-colors duration-300"
+          style={{ fontFamily: "var(--font-barlow)", fontWeight: 500, fontSize: "1rem", lineHeight: 1.5 }}
         >
           {product.name}
         </h3>
         <p
-          className="text-xs mb-4 leading-relaxed line-clamp-2"
-          style={{ color: "#666666", fontFamily: "var(--font-barlow)" }}
+          className="text-sm mb-5 line-clamp-2"
+          style={{ color: "#A0A0A0", fontFamily: "var(--font-barlow)", lineHeight: 1.7 }}
         >
           {product.description}
         </p>
 
         {/* Brands */}
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-5">
           {product.brands.slice(0, 3).map((brand) => (
             <span
               key={brand}
-              className="text-xs px-2 py-0.5"
+              className="text-xs px-2.5 py-1"
               style={{
-                background: "#1A1A1A",
-                color: "#777777",
+                background: "#181818",
+                color: "#888888",
                 fontFamily: "var(--font-barlow)",
-                border: "1px solid #222222",
               }}
             >
               {brand}
@@ -113,27 +96,18 @@ function ProductCard({
           ))}
           {product.brands.length > 3 && (
             <span
-              className="text-xs px-2 py-0.5"
-              style={{ background: "#1A1A1A", color: "#555555", fontFamily: "var(--font-barlow)" }}
+              className="text-xs px-2.5 py-1"
+              style={{ background: "#181818", color: "#666666", fontFamily: "var(--font-barlow)" }}
             >
               +{product.brands.length - 3}
             </span>
           )}
         </div>
 
-        {/* Specs */}
-        <div
-          className="pt-4 flex items-center justify-between"
-          style={{ borderTop: "1px solid #1A1A1A" }}
-        >
+        {/* Enquire */}
+        <div className="pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
           <div
-            className="text-xs"
-            style={{ color: "#555555", fontFamily: "var(--font-barlow)" }}
-          >
-            {product.specs[0]}
-          </div>
-          <div
-            className="text-xs text-red-brand flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="text-sm text-red-brand flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.1em" }}
           >
             Enquire →
@@ -246,14 +220,14 @@ export default function ProductShowcase() {
           }}
         >
           <p
-            className="text-sm mb-4"
-            style={{ color: "#555555", fontFamily: "var(--font-barlow)" }}
+            className="text-sm mb-5"
+            style={{ color: "#777777", fontFamily: "var(--font-barlow)" }}
           >
             Can&apos;t find your specific model? We stock 200+ seal kit variants.
           </p>
-          <Link href="/contact" className="btn-primary">
+          <a href="mailto:info@leakolock.com" className="btn-primary">
             Request Custom Seal Kit
-          </Link>
+          </a>
         </div>
       </div>
     </section>

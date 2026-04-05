@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -26,7 +25,7 @@ const barlow = Barlow({
 export const metadata: Metadata = {
   title: "LEAKOLOCK® | Sealing Fast Forward | Performante Seal Kits for Excavators",
   description:
-    "LEAKOLOCK® manufactures premium hydraulic seal kits for excavators — boom, bucket, arm, center joint, and cylinder seal kits. Backed by 30+ years of Kaveri Hydraulics expertise. Bangalore, India.",
+    "LEAKOLOCK® manufactures premium hydraulic seal kits for excavators: boom, bucket, arm, center joint, and cylinder seal kits. Built for zero-leak performance.",
   keywords: [
     "excavator seal kits",
     "hydraulic cylinder seal kits",
@@ -39,15 +38,14 @@ export const metadata: Metadata = {
     "CAT seal kits",
     "JCB seal kits",
     "Leakolock",
-    "Kaveri Hydraulics",
-    "Bangalore excavator parts",
+    "hydraulic seal kits",
   ],
-  authors: [{ name: "Kaveri Hydraulics" }],
+  authors: [{ name: "LEAKOLOCK®" }],
   openGraph: {
     title: "LEAKOLOCK® | Sealing Fast Forward",
-    description: "Premium hydraulic seal kits for excavators. Performante Parts by Kaveri Hydraulics.",
+    description: "Premium hydraulic seal kits for excavators. Precision-engineered for zero-leak performance.",
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     siteName: "LEAKOLOCK®",
   },
   twitter: {
@@ -79,7 +77,6 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
     </html>

@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -67,12 +66,13 @@ export default function Navbar() {
                 fill
                 className="object-contain object-left"
                 priority
+                style={{ mixBlendMode: "screen" }}
               />
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -86,13 +86,13 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="hidden md:block btn-primary text-sm py-2 px-5"
+            <a
+              href="mailto:info@leakolock.com"
+              className="hidden md:block btn-primary"
               style={{ fontSize: "0.85rem", letterSpacing: "0.12em", padding: "0.6rem 1.5rem" }}
             >
               Get a Quote
-            </Link>
+            </a>
 
             {/* Hamburger */}
             <button
@@ -177,25 +177,25 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
-          <Link
-            href="/contact"
+          <a
+            href="mailto:info@leakolock.com"
             className="btn-primary mt-6"
             style={{
-              transitionDelay: menuOpen ? "280ms" : "0ms",
+              transitionDelay: menuOpen ? "240ms" : "0ms",
               transform: menuOpen ? "translateX(0)" : "translateX(30px)",
               opacity: menuOpen ? 1 : 0,
               transition: "all 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
             }}
           >
             Get a Quote
-          </Link>
+          </a>
 
           <div className="mt-auto pb-8">
             <p
               className="text-xs tracking-widest"
               style={{ color: "#555555", fontFamily: "var(--font-bebas)" }}
             >
-              A brand by Kaveri Hydraulics · Est. 1993
+              LEAKOLOCK® · Sealing Fast Forward
             </p>
           </div>
         </div>
