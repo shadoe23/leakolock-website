@@ -1,26 +1,336 @@
 @import "tailwindcss";
 
+@theme {
+  --color-red-brand: #DC2626;
+  --color-red-glow: #FF3333;
+  --color-red-dim: #991B1B;
+  --color-black-pure: #000000;
+  --color-black-soft: #0A0A0A;
+  --color-black-card: #111111;
+  --color-black-border: #1A1A1A;
+  --color-black-hover: #222222;
+  --color-white-pure: #FFFFFF;
+  --color-white-dim: #F5F5F5;
+  --color-gray-muted: #A0A0A0;
+  --color-gray-dark: #555555;
+
+  --font-display: var(--font-bebas);
+  --font-body: var(--font-barlow);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --red: #DC2626;
+  --red-glow: rgba(220, 38, 38, 0.4);
+  --red-glow-sm: rgba(220, 38, 38, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: #000000;
+  scroll-behavior: auto; /* Lenis handles this */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000000;
+  color: #FFFFFF;
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #DC2626;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF3333;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+/* ─── Noise Texture Overlay ─── */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+}
+
+/* ─── Typography Utilities ─── */
+.font-display {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #FF3333 0%, #DC2626 50%, #991B1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Effects ─── */
+.glow-red {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.2);
+}
+
+.glow-red-text {
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.4);
+}
+
+.glow-red-border {
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.3), 0 0 20px rgba(220, 38, 38, 0.1);
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: #DC2626;
+  color: #FFFFFF;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #FF3333;
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(220, 38, 38, 0.5);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-outline:hover {
+  border-color: #DC2626;
+  background: rgba(220, 38, 38, 0.1);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Card Styles ─── */
+.card-dark {
+  background: #111111;
+  border: 1px solid #1A1A1A;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-dark:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 8px 40px rgba(220, 38, 38, 0.1), 0 0 0 1px rgba(220, 38, 38, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ─── Red Line Accent ─── */
+.red-line {
+  width: 48px;
+  height: 2px;
+  background: #DC2626;
+  position: relative;
+}
+
+.red-line::after {
+  content: '';
+  position: absolute;
+  left: 52px;
+  top: 0;
+  width: 8px;
+  height: 2px;
+  background: #DC2626;
+  opacity: 0.5;
+}
+
+/* ─── Section Padding ─── */
+.section-pad {
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding: 8rem 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-pad {
+    padding: 10rem 0;
+  }
+}
+
+/* ─── Container ─── */
+.container-brand {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-brand {
+    padding: 0 2.5rem;
+  }
+}
+
+/* ─── Animated underline ─── */
+.nav-link {
+  position: relative;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #DC2626;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #FFFFFF;
+}
+
+/* ─── Scroll reveal animations (for JS-triggered classes) ─── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Lightning bolt divider ─── */
+.bolt-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #DC2626 30%, #DC2626 70%, transparent 100%);
+  opacity: 0.3;
+}
+
+/* ─── Grain texture ─── */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ─── Clip corners ─── */
+.clip-corner-tr {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.clip-corner-all {
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+}
+
+/* ─── Loading Screen ─── */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ─── Red ambient glow bg ─── */
+.ambient-red {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
